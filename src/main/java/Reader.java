@@ -1,23 +1,17 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Reader {
-    public static int read() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str;
-        try {
-            str = br.readLine();
+    public static String read(String filename) {
+        String inputFileName = "src/main/resources/" + filename;
+        StringBuilder buffer = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        int number;
-        try {
-            number = Integer.parseInt(str);
-        } catch (NumberFormatException e) {
-            number = -1;
-        }
-        return number;
+        return buffer.toString();
     }
 }
