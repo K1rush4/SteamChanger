@@ -1,5 +1,6 @@
 import java.awt.event.*;
 import javax.swing.*;
+
 public class GUI {
     void window() {
         JFrame f;
@@ -8,6 +9,7 @@ public class GUI {
 
         QiwiChanger QiwiChanger = new QiwiChanger();
         MarketChanger MarketChanger = new MarketChanger();
+        Reader Reader = new Reader();
 
 
         //Qiwi
@@ -77,7 +79,7 @@ public class GUI {
         b2.setBounds(225, 475, 100, 30);
         b2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String SteamResoult = MarketChanger.MarketCacl(t2.getText());
+                String SteamResoult = MarketChanger.MarketCacl(t3.getText());
                 String KPDResoult = MarketChanger.MarketKPD(t2.getText(), t3.getText());
                 l7.setText(SteamResoult);
                 l9.setText(KPDResoult + " %");
@@ -85,7 +87,42 @@ public class GUI {
         });
         f.add(b2);
 
+
+        //Справка
+        JFrame f2;
+        f2 = new JFrame();
+        f2.setSize(800, 350);
+
+        JButton b3 = new JButton("Справка");
+        b3.setBounds(425, 525, 90, 25);
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                f2.setVisible(true);
+            }
+        });
+        f.add(b3);
+
+        JLabel l10 = new JLabel(Reader.read("reference.txt"));
+        l10.setBounds(35, -40, 4000, 300);
+        f2.add(l10);
+
+        JLabel l11 = new JLabel();
+        l11.setBounds(550, 220, 1000, 30);
+        l11.setText("Обратная связь tg: @K1rush444");
+        f2.add(l11);
+
+        JButton b4 = new JButton("Закрыть");
+        b4.setBounds(350, 250, 100, 30);
+        b4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                f2.setVisible(false);
+            }
+        });
+        f2.add(b4);
+
+
         f.setLayout(null);
+        f2.setLayout(null);
         f.setVisible(true);
     }
 
