@@ -1,15 +1,18 @@
+import java.text.DecimalFormat;
+
 public class MarketChanger {
 
     public static String MarketCacl(String StrSteamRub) {
 
         String str;
+        DecimalFormat df = new DecimalFormat("#.##");
 
         try {
             int IntSteamRub = Integer.parseInt(StrSteamRub);
 
             if (IntSteamRub > 0) {
                 double resoult = IntSteamRub / 1.15;
-                str = Double.toString(resoult);
+                str = df.format(resoult);
             } else {
                 str = "Неверный формат данных";
             }
@@ -24,6 +27,7 @@ public class MarketChanger {
     public static String MarketKPD(String StrMarketRub, String StrSteamRub) {
 
         String str;
+        DecimalFormat df = new DecimalFormat("#.##");
 
         try {
             int IntMarketRub = Integer.parseInt(StrMarketRub);
@@ -31,7 +35,7 @@ public class MarketChanger {
 
             if (IntMarketRub > 0 && IntSteamRub > 0) {
                 double resoult = 100 * (IntSteamRub / 1.15) / IntMarketRub;
-                str = Double.toString(resoult);
+                str = df.format(resoult);
             } else {
                 str = "Неверный формат данных";
             }

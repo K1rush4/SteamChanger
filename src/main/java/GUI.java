@@ -80,7 +80,7 @@ public class GUI {
                 String SteamResoult = MarketChanger.MarketCacl(t2.getText());
                 String KPDResoult = MarketChanger.MarketKPD(t2.getText(), t3.getText());
                 l7.setText(SteamResoult);
-                l9.setText(KPDResoult);
+                l9.setText(KPDResoult + " %");
             }
         });
         f.add(b2);
