@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -10,6 +11,7 @@ public class GUI {
         QiwiChanger QiwiChanger = new QiwiChanger();
         MarketChanger MarketChanger = new MarketChanger();
         Reader Reader = new Reader();
+        Color ColorLightLightGray = new Color(215,215,215);
 
 
         //Qiwi
@@ -28,6 +30,11 @@ public class GUI {
         JLabel l3 = new JLabel("Ожидание ввода данных...");
         l3.setBounds(300, 100, 200, 30);
         f.add(l3);
+
+        JPanel p1 = new JPanel();
+        p1.setBounds(295,100,200,30);
+        p1.setBackground(ColorLightLightGray);
+        f.add(p1);
 
         JButton b1 = new JButton("Рассчитать");
         b1.setBounds(225, 175, 100, 30);
@@ -58,6 +65,7 @@ public class GUI {
         t3.setBounds(50, 400, 200, 30);
         f.add(t3);
 
+
         //2 column
         JLabel l6 = new JLabel("На баланс Steam Вы получите:");
         l6.setBounds(300, 250, 200, 30);
@@ -67,13 +75,23 @@ public class GUI {
         l7.setBounds(300, 300, 200, 30);
         f.add(l7);
 
-        JLabel l8 = new JLabel("КДП данного оборота");
+        JPanel p2 = new JPanel();
+        p2.setBounds(295,300,200,30);
+        p2.setBackground(ColorLightLightGray);
+        f.add(p2);
+
+        JLabel l8 = new JLabel("КДП данного оборота:");
         l8.setBounds(300, 350, 200, 30);
         f.add(l8);
 
         JLabel l9 = new JLabel("Ожидание ввода данных...");
         l9.setBounds(300, 400, 200, 30);
         f.add(l9);
+
+        JPanel p3 = new JPanel();
+        p3.setBounds(295,400,200,30);
+        p3.setBackground(ColorLightLightGray);
+        f.add(p3);
 
         JButton b2 = new JButton("Рассчитать");
         b2.setBounds(225, 475, 100, 30);
@@ -82,7 +100,7 @@ public class GUI {
                 String SteamResoult = MarketChanger.MarketCacl(t3.getText());
                 String KPDResoult = MarketChanger.MarketKPD(t2.getText(), t3.getText());
                 l7.setText(SteamResoult);
-                l9.setText(KPDResoult + " %");
+                l9.setText(KPDResoult);
             }
         });
         f.add(b2);
