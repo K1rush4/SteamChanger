@@ -1,9 +1,9 @@
 import java.text.DecimalFormat;
 
 public class QiwiChanger {
-    final static double QiwiToSteam = 0.83;
+    final double QiwiToSteam = 0.83;
 
-    public static String main(String StrQiwiRub) {
+    public String main(String StrQiwiRub) {
 
         String str;
         DecimalFormat df = new DecimalFormat("#.##");
