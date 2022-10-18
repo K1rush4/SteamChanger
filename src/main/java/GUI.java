@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI {
@@ -38,11 +37,9 @@ public class GUI {
 
         JButton b1 = new JButton("Рассчитать");
         b1.setBounds(225, 175, 100, 30);
-        b1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String QiwiResoult = QiwiChanger.main(t1.getText());
-                l3.setText(QiwiResoult);
-            }
+        b1.addActionListener(e -> {
+            String QiwiResoult = QiwiChanger.main(t1.getText());
+            l3.setText(QiwiResoult);
         });
         f.add(b1);
 
@@ -95,13 +92,11 @@ public class GUI {
 
         JButton b2 = new JButton("Рассчитать");
         b2.setBounds(225, 475, 100, 30);
-        b2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String SteamResoult = MarketChanger.MarketCacl(t3.getText());
-                String KPDResoult = MarketChanger.MarketKPD(t2.getText(), t3.getText());
-                l7.setText(SteamResoult);
-                l9.setText(KPDResoult);
-            }
+        b2.addActionListener(e -> {
+            String SteamResoult = MarketChanger.MarketCacl(t3.getText());
+            String KPDResoult = MarketChanger.MarketKPD(t2.getText(), t3.getText());
+            l7.setText(SteamResoult);
+            l9.setText(KPDResoult);
         });
         f.add(b2);
 
@@ -113,11 +108,7 @@ public class GUI {
 
         JButton b3 = new JButton("Справка");
         b3.setBounds(425, 525, 90, 25);
-        b3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                f2.setVisible(true);
-            }
-        });
+        b3.addActionListener(e -> f2.setVisible(true));
         f.add(b3);
 
         JLabel l10 = new JLabel(Reader.read("reference.txt"));
@@ -131,11 +122,7 @@ public class GUI {
 
         JButton b4 = new JButton("Закрыть");
         b4.setBounds(350, 250, 100, 30);
-        b4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                f2.setVisible(false);
-            }
-        });
+        b4.addActionListener(e -> f2.setVisible(false));
         f2.add(b4);
 
 

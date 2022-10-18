@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class Reader {
-    public static String read(String filename) {
+    public String read(String filename) {
         String inputFileName = "src/main/resources/" + filename;
         StringBuilder buffer = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {

@@ -2,7 +2,7 @@ import java.text.DecimalFormat;
 
 public class MarketChanger {
 
-    public static String MarketCacl(String StrSteamRub) {
+    public String MarketCacl(String StrSteamRub) {
 
         String str;
         DecimalFormat df = new DecimalFormat("#.##");
@@ -24,7 +24,7 @@ public class MarketChanger {
     }
 
 
-    public static String MarketKPD(String StrMarketRub, String StrSteamRub) {
+    public String MarketKPD(String StrMarketRub, String StrSteamRub) {
 
         String str;
         DecimalFormat df = new DecimalFormat("#.##");
